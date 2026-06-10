@@ -27,15 +27,44 @@ const data = {
 };
 
 function updateItems() {
+
     const category = document.getElementById("category").value;
     const itemSelect = document.getElementById("item");
 
     itemSelect.innerHTML = "";
 
-    data[category].forEach(item => {
+    Object.keys(data[category]).forEach(item => {
+
         const option = document.createElement("option");
+
         option.value = item;
         option.textContent = item;
+
         itemSelect.appendChild(option);
+
+    });
+
+    updateStates();
+}
+
+function updateStates() {
+
+    const category = document.getElementById("category").value;
+
+    const item = document.getElementById("item").value;
+
+    const stateSelect = document.getElementById("state");
+
+    stateSelect.innerHTML = "";
+
+    data[category][item].forEach(state => {
+
+        const option = document.createElement("option");
+
+        option.value = state;
+        option.textContent = state;
+
+        stateSelect.appendChild(option);
+
     });
 }
