@@ -58,9 +58,10 @@ button:hover {
 
 #searchResult{
     margin-top:15px;
-    padding:10px;
-    border-radius:8px;
+    padding:15px;
+    border-radius:10px;
     background:#f1f8e9;
+    border:2px solid #81c784;
 }
 
 input{
