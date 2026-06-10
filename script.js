@@ -68,3 +68,7 @@ function updateStates() {
 
     });
 }
+
+window.onload = function() {
+    updateItems();
+};
