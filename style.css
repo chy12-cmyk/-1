@@ -55,3 +55,15 @@ button:hover {
     background-color: #e8f5e9;
     border-radius: 10px;
 }
+
+#searchResult{
+    margin-top:15px;
+    padding:10px;
+    border-radius:8px;
+    background:#f1f8e9;
+}
+
+input{
+    padding:8px;
+    border-radius:5px;
+}
