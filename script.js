@@ -26,6 +26,40 @@ const data = {
     }
 };
 
+const resultData = {
+
+    "피자박스": {
+        "깨끗함": {
+            result: "종이류 배출",
+            reason: "오염되지 않은 종이는 재활용 가능합니다."
+        },
+        "기름 조금 묻음": {
+            result: "일반쓰레기",
+            reason: "기름이 묻은 종이는 재활용이 어렵습니다."
+        },
+        "기름 심하게 묻음": {
+            result: "일반쓰레기",
+            reason: "심한 오염으로 재활용 불가합니다."
+        }
+    },
+
+    "배달용기": {
+        "세척 완료": {
+            result: "플라스틱 배출",
+            reason: "깨끗하게 세척된 플라스틱은 재활용 가능합니다."
+        },
+        "양념 조금 남음": {
+            result: "일반쓰레기",
+            reason: "음식물 오염이 남아있습니다."
+        },
+        "양념 많이 남음": {
+            result: "일반쓰레기",
+            reason: "재활용 공정에 방해됩니다."
+        }
+    }
+
+};
+
 function updateItems() {
 
     const category = document.getElementById("category").value;
@@ -72,3 +106,28 @@ function updateStates() {
 window.onload = function() {
     updateItems();
 };
+
+function showResult() {
+
+    const item = document.getElementById("item").value;
+    const state = document.getElementById("state").value;
+
+    const resultDiv = document.getElementById("result");
+
+    if(resultData[item] && resultData[item][state]) {
+
+        resultDiv.innerHTML = `
+            <h3>결과</h3>
+            <p><strong>배출방법:</strong> ${resultData[item][state].result}</p>
+            <p><strong>이유:</strong> ${resultData[item][state].reason}</p>
+        `;
+
+    } else {
+
+        resultDiv.innerHTML = `
+            <h3>결과</h3>
+            <p>아직 데이터가 등록되지 않았습니다.</p>
+        `;
+
+    }
+}
