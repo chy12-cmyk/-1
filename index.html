@@ -17,12 +17,24 @@
         <option>부산</option>
     </select>
 
-    <p>카테고리 선택</p>
-    <select>
-        <option>종이류</option>
-        <option>플라스틱</option>
-        <option>유리류</option>
-    </select>
+   <div class="section">
+    <label>카테고리 선택</label>
 
+    <select id="category" onchange="updateItems()">
+        <option value="종이류">📦 종이류</option>
+        <option value="플라스틱">🥤 플라스틱</option>
+        <option value="유리류">🍾 유리류</option>
+        <option value="음식물/일반쓰레기">🍎 음식물/일반쓰레기</option>
+    </select>
+</div>
+
+<div class="section">
+    <label>품목 선택</label>
+
+    <select id="item">
+        <option>피자박스</option>
+    </select>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
