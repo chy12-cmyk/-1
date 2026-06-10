@@ -182,3 +182,38 @@ function showResult() {
 
     }
 }
+
+function searchItem() {
+
+    const keyword = document.getElementById("searchInput").value.trim();
+
+    const resultDiv = document.getElementById("searchResult");
+
+    let found = false;
+
+    for (const category in data) {
+
+        for (const item in data[category]) {
+
+            if (item.includes(keyword)) {
+
+                resultDiv.innerHTML = `
+                    <h3>검색 결과</h3>
+                    <p><strong>${item}</strong></p>
+                    <p>카테고리: ${category}</p>
+                `;
+
+                found = true;
+                return;
+            }
+        }
+    }
+
+    if (!found) {
+
+        resultDiv.innerHTML = `
+            <h3>검색 결과</h3>
+            <p>해당 품목을 찾을 수 없습니다.</p>
+        `;
+    }
+}
